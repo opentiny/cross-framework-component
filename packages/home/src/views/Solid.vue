@@ -15,11 +15,6 @@ export default {
     solidUrl() {
       return 'http://localhost:2002/'
     }
-  },
-  methods: {
-    jump(name) {
-      this.$router.push({ name })
-    }
   }
 }
 </script>

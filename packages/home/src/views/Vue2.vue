@@ -14,11 +14,6 @@ export default {
     return {
       vue2Url: 'http://localhost:2003/'
     }
-  },
-  methods: {
-    jump(name) {
-      this.$router.push({ name })
-    }
   }
 }
 </script>
