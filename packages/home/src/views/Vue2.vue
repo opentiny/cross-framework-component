@@ -9,12 +9,10 @@
 </template>
 
 <script>
-import hostMap from '../hostMap'
-
 export default {
   data() {
     return {
-      vue2Url: hostMap('//localhost:2003/')
+      vue2Url: 'http://localhost:2003/'
     }
   },
   methods: {

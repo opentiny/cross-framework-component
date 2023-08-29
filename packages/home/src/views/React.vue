@@ -9,11 +9,10 @@
 </template>
 
 <script>
-import hostMap from '../hostMap'
 export default {
   data() {
     return {
-      reactUrl: hostMap('//localhost:2001/')
+      reactUrl: 'http://localhost:2001/'
     }
   }
 }

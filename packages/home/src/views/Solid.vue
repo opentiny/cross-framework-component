@@ -9,12 +9,11 @@
 </template>
 
 <script>
-import hostMap from '../hostMap'
 
 export default {
   computed: {
     solidUrl() {
-      return hostMap('//localhost:2002/')
+      return 'http://localhost:2002/'
     }
   },
   methods: {

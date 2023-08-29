@@ -27,15 +27,14 @@
 </template>
 
 <script>
-import hostMap from '../hostMap'
 
 export default {
   data() {
     return {
-      reactUrl: hostMap('//localhost:2001/'),
-      solidUrl: hostMap('//localhost:2002/'),
-      vue2Url: hostMap('//localhost:2003/'),
-      vue3Url: hostMap('//localhost:2004/')
+      reactUrl: 'http://localhost:2001/',
+      solidUrl: 'http://localhost:2002/',
+      vue2Url: 'http://localhost:2003/',
+      vue3Url: 'http://localhost:2004/'
     }
   }
 }

@@ -9,7 +9,6 @@
     ]"
     v-bind="a($attrs, ['class', 'style'], true)"
   >
-    <component v-if="icon && !loading" :is="icon" class="tiny-icon is-icon" />
     <slot>
       <span :style="{ marginLeft: text && (icon || loading) ? '4px' : 0 }">{{
         text
