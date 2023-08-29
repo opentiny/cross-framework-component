@@ -12,7 +12,6 @@
   "dependencies": {
     "@opentiny/renderless": "workspace:~",
     "@opentiny/theme": "workspace:~",
-    "@opentiny/react-common": "workspace:~",
-    "@opentiny/react-icon": "workspace:~"
+    "@opentiny/react-common": "workspace:~"
   }
 }

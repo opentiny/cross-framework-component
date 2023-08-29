@@ -1,6 +1,5 @@
 import * as hooks from 'solid-js'
 import { createSignal } from 'solid-js'
-import SvgRender from './SvgRender'
 import '@opentiny/theme/base/index.less'
 
 const EVENTS_PREFIX = 'on'
@@ -87,11 +86,5 @@ export const useSetup = ({
   return {
     ...sdk,
     type: props.type ?? 'default'
-  }
-}
-
-export const Svg = ({ name = 'Icon', component }) => {
-  return (props) => {
-    return SvgRender(component, props)
   }
 }
