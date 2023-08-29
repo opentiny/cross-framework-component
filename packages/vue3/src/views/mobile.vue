@@ -11,10 +11,10 @@
             <tiny-countdown :operate="operateMobile"></tiny-countdown>
           </div>
           <div class="btn-box">
-            <tiny-button type="primary" round @click="resetMobile"
+            <tiny-button type="primary" tiny_mode="mobile" round @click="resetMobile"
               >Reset</tiny-button
             >
-            <tiny-button type="danger" round @click="startMobile"
+            <tiny-button type="danger" tiny_mode="mobile" round @click="startMobile"
               >Start</tiny-button
             >
           </div>

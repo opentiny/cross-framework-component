@@ -5,14 +5,7 @@
     :disabled="state.buttonDisabled || loading"
     :type="nativeType"
     :class="[
-      type ? 'tiny-watch-button--' + type : '',
-      size ? 'tiny-watch-button--' + size : '',
-      {
-        'is-disabled': state.buttonDisabled,
-        'is-loading': loading,
-        'is-plain': state.plain,
-        'is-round': round
-      }
+      type ? 'tiny-watch-button--' + type : ''
     ]"
     v-bind="a($attrs, ['class', 'style'], true)"
   >
@@ -41,10 +34,7 @@ export default defineComponent({
     'icon',
     'resetTime',
     'nativeType',
-    'loading',
-    'disabled',
-    'plain',
-    'round'
+    'loading'
   ],
   setup(props, context) {
     return setup({ props, context, renderless, api })
