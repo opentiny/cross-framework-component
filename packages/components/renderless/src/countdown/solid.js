@@ -1,7 +1,5 @@
 import {
   render,
-  CustomSetInterval,
-  getRestTime,
   start,
   reset,
   init

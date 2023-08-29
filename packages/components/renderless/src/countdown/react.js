@@ -1,7 +1,5 @@
 import {
   render,
-  CustomSetInterval,
-  getRestTime,
   start,
   reset,
   init
@@ -21,8 +19,7 @@ export default function renderless(
     second: '00',
     // 每秒执行（实例）
     setIntervalInstance: Object.freeze({ stop: () => {} }),
-    deadlineTimestamp: Date.now() + props.deadline * 1000,
-    time: 0
+    deadlineTimestamp: Date.now() + props.deadline * 1000
   })
 
   const renderFn = render({ state, props, nextTick, emit })
@@ -34,12 +31,9 @@ export default function renderless(
     reset: reset({ state, props, renderFn })
   }
 
-  nextTick(() => {
-    if (!state.time) {
-      init({ api, props, state })
-      state.time++
-    }
-  })
+  // 模拟vue的mounted，只会执行一次
+  useEffect(()=> init({ api, props, state }),[])
+
 
   return api
 }
