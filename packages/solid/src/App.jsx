@@ -20,8 +20,8 @@ function App() {
         <div class="demo-container">
           <div class="tiny-countdown" style="--ti-countdown-font-color:pink;"><Countdown operate={operate}></Countdown></div>
           <div class="btn-box">
-            <Button type="primary" onClick={operation.reset()}>Reset</Button>
-            <Button type="danger" onClick={operation.start()}>Start</Button>
+            <Button type="primary" onClick={operation.reset}>Reset</Button>
+            <Button type="danger" onClick={operation.start}>Start</Button>
           </div>
         </div>
       </div>

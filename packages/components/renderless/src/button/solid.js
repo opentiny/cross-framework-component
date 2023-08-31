@@ -8,21 +8,16 @@ export default function renderless(
   { emit },
   { framework }
 ) {
-  const state = useReactive({
+  const { state, proxy } = useReactive({
     timer: null,
     disabled: !!props.disabled,
-    plain: props.plain,
-    formDisabled: false,
-    buttonDisabled: (curState) =>
-      curState.disabled || !!props.disabled || curState.formDisabled
+    plain: props.plain
   })
-
-  state.disabled = !!props.disabled
 
   const api = {
     state,
-    clearTimer: clearTimer(state),
-    handleClick: handleClick({ emit, props, state, framework })
+    clearTimer: clearTimer(proxy),
+    handleClick: handleClick({ emit, props, state: proxy, framework })
   }
 
   return api
