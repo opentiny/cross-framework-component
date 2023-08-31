@@ -4,7 +4,7 @@ export const api = ['state', 'handleClick']
 
 export default function renderless(
   props,
-  { useReactive, useEffect },
+  { useReactive },
   { emit },
   { framework }
 ) {
@@ -12,14 +12,8 @@ export default function renderless(
     timer: null,
     disabled: !!props.disabled,
     plain: props.plain,
-    formDisabled: false,
-    buttonDisabled: (curState) =>
-      curState.disabled || !!props.disabled || curState.formDisabled
+    formDisabled: false
   })
-
-  useEffect(() => {
-    state.disabled = !!props.disabled
-  }, [props.disabled])
 
   const api = {
     state,

@@ -21,7 +21,7 @@ export default function Button(props) {
     type,
     $attrs
   } = useSetup({
-    props,
+    props: { ...props, nativeType: 'button', resetTime: 1000 },
     renderless
   })
 
@@ -29,17 +29,16 @@ export default function Button(props) {
     'tiny-button',
     type ? 'tiny-button--' + type : '',
     size ? 'tiny-button--' + size : '',
-    state.buttonDisabled ? 'is-disabled' : '',
+    state.disabled ? 'is-disabled' : '',
     state.plain ? 'is-plain' : '',
     round ? 'is-round' : '',
     circle ? 'is-circle' : ''
   ].join(' ').trim()
-
   return (
     <button
       className={className}
       onClick={handleClick}
-      disabled={state.buttonDisabled}
+      disabled={state.disabled}
       autoFocus={autofocus}
       type={nativeType}
       tabIndex={tabindex}

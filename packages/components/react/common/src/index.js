@@ -1,7 +1,6 @@
 import * as hooks from 'react'
 import '@opentiny/theme/base/index.less'
-
-const { useState, useCallback } = hooks
+import { useReactive } from 'ahooks'
 
 export const emit =
   (props) =>
@@ -10,42 +9,6 @@ export const emit =
       props[evName](...args)
     }
   }
-
-export const useSetState = (initialState) => {
-  const [state, setState] = useState(initialState)
-
-  const setMergeState = useCallback((patch) => {
-    setState((prevState) => {
-      // 参数取之前的对象，用 展开运算符合并 新旧属性
-      const newState = typeof patch === 'function' ? patch(prevState) : patch
-      return newState ? { ...prevState, ...newState } : prevState
-    })
-  }, [])
-
-  return [state, setMergeState]
-}
-
-// props 应该不用做处理， props 都是 . 访问。
-export const useReactive = (staticObject) => {
-  const [state, setMergeState] = useSetState(staticObject)
-
-  return new Proxy(state, {
-    get(target, property) {
-      if (typeof target[property] === 'function') {
-        // 模拟 computed
-        return target[property](target)
-      } else {
-        return target[property]
-      }
-    },
-    set(target, property, value) {
-      setMergeState({
-        [property]: value
-      })
-      return true
-    }
-  })
-}
 
 // nextTick， 等待 dom 更新后触发回调
 export const useNextTick = (callback) => {

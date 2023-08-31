@@ -91,7 +91,7 @@ export const reset =
     renderFn()
   }
 
-export const init = ({ api, props, state }) => {
+export const init = ({ api, props }) => {
   const { start, reset, render } = api
   render()
   props.operate && props.operate({ start, reset })
