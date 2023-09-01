@@ -8,7 +8,7 @@ This is a demonstration of the OpenTiny cross-end and cross-framework micro-fron
 You can run the following command in the root directory of the project to download the project dependency:
 
 ```shell
-pnpm in
+pnpm i
 ```
 
 You can then start the case project by running the following command:
