@@ -1,6 +1,6 @@
 # @opentiny/cross-framework
 
-This is a demonstration of the OpenTiny cross-end and cross-framework micro-front-end project (built based on WUYAN and pnpm):
+This is a demonstration of the OpenTiny cross-end and cross-framework micro-front-end project (built based on WUJIE and pnpm):
 
 
 ## Local startup
