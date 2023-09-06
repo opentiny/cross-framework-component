@@ -24,15 +24,15 @@ pnpm dev:react
 # or
 pnpm dev:solid
 # or
-pnpm dev:view2
+pnpm dev:vue2
 # or
-pnpm dev:view3
+pnpm dev:vue3
 ```
 
 Congratulations on the success of the launch!
 
-```
-vue-conf
+``` html
+cross-framework-component
 ├─ package.json
 ├─ packages
 │  ├─ components

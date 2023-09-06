@@ -30,3 +30,28 @@ pnpm dev:vue3
 ```
 
 恭喜你启动成功！🎉
+
+``` html
+cross-framework-component
+├─ package.json
+├─ packages
+│  ├─ components
+│  │  ├─ react
+│  │  ├─ renderless
+│  │  ├─ solid
+│  │  ├─ theme
+│  │  ├─ theme-mobile
+│  │  ├─ theme-watch
+│  │  └─ vue
+│  ├─ element-to-opentiny
+│  ├─ home
+│  ├─ react
+│  ├─ solid
+│  ├─ vue2
+│  └─ vue3
+├─ pnpm-workspace.yaml
+├─ README.md
+├─ README.zh-CN.md
+└─ setup.js
+
+```
