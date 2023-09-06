@@ -8,6 +8,7 @@ export default function renderless(
   { emit },
   { framework }
 ) {
+  // 利用ahooks提供的useReactive模拟vue的响应式数据，并且使用react的useRef响应式数据被重复执行定义
   const state = useReactive({
     timer: null,
     disabled: !!props.disabled,

@@ -1,7 +1,8 @@
 import * as hooks from 'react'
 import '@opentiny/theme/base/index.less'
-import { useReactive } from 'ahooks'
+import { useReactive } from 'ahooks' // 使用ahooks提供的useReactive抹平vue框架的响应式数据
 
+// 抹平vue框架的事件触发机制
 export const emit =
   (props) =>
   (evName, ...args) => {
@@ -10,7 +11,7 @@ export const emit =
     }
   }
 
-// nextTick， 等待 dom 更新后触发回调
+// 模拟vue框架的nextTick，等待 dom 更新后触发回调
 export const useNextTick = (callback) => {
   queueMicrotask(callback)
 }
@@ -30,9 +31,9 @@ export const emitEvent = () => {
 }
 
 export const useSetup = ({
-  props,
-  renderless,
-  extendOptions = { framework: 'React' }
+  props, // 模板层传递过来的props属性
+  renderless, // renderless无渲染函数
+  extendOptions = { framework: 'React' } // 模板层传递过来的额外参数
 }) => {
   const render =
     typeof props.tiny_renderless === 'function'
