@@ -3,11 +3,11 @@
     <img alt="Vue logo" src="./assets/logo.png" v-if="false" />
     <div>Vue version: {{ version }}</div>
     <p>
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="首页" name="home"></el-tab-pane>
-        <el-tab-pane label="表单" name="form"></el-tab-pane>
-        <el-tab-pane label="表格" name="list"></el-tab-pane>
-      </el-tabs>
+      <tiny-tabs v-model="activeName" @click="handleClick">
+        <tiny-tab-item title="首页" name="home"></tiny-tab-item>
+        <tiny-tab-item title="表单" name="form"></tiny-tab-item>
+        <tiny-tab-item title="表格" name="list"></tiny-tab-item>
+      </tiny-tabs>
     </p>
     <router-view></router-view>
   </div>

@@ -1,28 +1,28 @@
 <template>
   <div>
     <div class="filter-bar">
-      <el-select v-model="value" placeholder="请选择">
-        <el-option
+      <tiny-select v-model="value" placeholder="请选择">
+        <tiny-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value"
         >
-        </el-option>
-      </el-select>
-      <el-date-picker v-model="value1" type="daterange"> </el-date-picker>
-      <el-input
+        </tiny-option>
+      </tiny-select>
+      <tiny-date-picker v-model="value1" type="daterange"> </tiny-date-picker>
+      <tiny-input
         v-model="search"
         placeholder="输入关键字搜索"
         style="width: 300px"
       />
-      <el-button>搜索</el-button>
+      <tiny-button>搜索</tiny-button>
     </div>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="date" label="日期" width="180"> </el-table-column>
-      <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
-      <el-table-column prop="address" label="地址"> </el-table-column>
-    </el-table>
+    <tiny-grid :data="tableData" style="width: 100%">
+      <tiny-grid-column field="date" title="日期" width="180"> </tiny-grid-column>
+      <tiny-grid-column field="name" title="姓名" width="180"> </tiny-grid-column>
+      <tiny-grid-column field="address" title="地址"> </tiny-grid-column>
+    </tiny-grid>
   </div>
 </template>
 

@@ -1,10 +1,9 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import TinyVue from '@opentiny/vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
-Vue.use(ElementUI)
+Vue.use(TinyVue)
 
 const router = new VueRouter({
   routes: [
