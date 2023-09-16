@@ -1,35 +1,41 @@
-import Vue from 'vue'
+import * as Vue from 'vue'
 import TinyVue from '@opentiny/vue'
 import App from './App.vue'
-import VueRouter from 'vue-router'
+import * as VueRouter from 'vue-router'
 
-Vue.use(TinyVue)
+window.$vueApp.use(TinyVue)
 
-const router = new VueRouter({
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHashHistory(),
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home',
     },
     {
       path: '/home',
-      component: () => import('./components/HomePage.vue')
+      component: Vue.defineAsyncComponent(
+        () => import('./components/HomePage.vue')
+      ),
     },
     {
       path: '/form',
-      component: () => import('./components/FormPage.vue')
+      component: Vue.defineAsyncComponent(
+        () => import('./components/FormPage.vue')
+      ),
     },
     {
       path: '/list',
-      component: () => import('./components/ListPage.vue')
-    }
-  ]
+      component: Vue.defineAsyncComponent(
+        () => import('./components/ListPage.vue')
+      ),
+    },
+  ],
 })
 
-Vue.config.productionTip = false
-Vue.use(VueRouter)
-
-new Vue({
-  router,
-  render: (h) => h(App)
-}).$mount('#app')
+window.$vueApp = Vue.createApp(App)
+window.$vueApp.mount('#app')
+window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
+  return path + (path.endsWith('/') ? '' : '/') + pathToAppend
+}
+window.$vueApp.use(router)
