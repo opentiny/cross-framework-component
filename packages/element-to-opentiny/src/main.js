@@ -3,8 +3,6 @@ import TinyVue from '@opentiny/vue'
 import App from './App.vue'
 import * as VueRouter from 'vue-router'
 
-window.$vueApp.use(TinyVue)
-
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes: [
@@ -34,8 +32,9 @@ const router = VueRouter.createRouter({
 })
 
 window.$vueApp = Vue.createApp(App)
+window.$vueApp.use(TinyVue)
+window.$vueApp.use(router)
 window.$vueApp.mount('#app')
 window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
   return path + (path.endsWith('/') ? '' : '/') + pathToAppend
 }
-window.$vueApp.use(router)
