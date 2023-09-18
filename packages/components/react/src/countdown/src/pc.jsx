@@ -8,20 +8,17 @@ export default function Countdown(props) {
     completeZero: true,
     leftSecond: 0,
     autoPlay: false,
-    ignoreDay: true,
+    ignoreDay: true
   }
 
-  const newProps = { ...props, ...defaultProps }
+  const newProps = { ...defaultProps, ...props }
 
-
-  const {
-    state,
-  } = useSetup({
+  const { state } = useSetup({
     props: newProps,
     renderless
   })
 
   return (
-    <div className='tiny-countdown__container'>{`${state.hour}:${state.minute}:${state.second}`}</div>
+    <div className="tiny-countdown__container">{`${state.hour}:${state.minute}:${state.second}`}</div>
   )
 }

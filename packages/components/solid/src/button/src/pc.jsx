@@ -11,22 +11,16 @@ export default function Button(props) {
     circle,
     icon: Icon,
     size,
-    nativeType = 'button',
+    nativeType = 'button'
   } = props
-  const {
-    handleClick,
-    state,
-    tabindex,
-    type,
-    $attrs
-  } = useSetup({
-    props: { ...props, nativeType: 'button', resetTime: 1000 },
+  const { handleClick, state, tabindex, type, $attrs } = useSetup({
+    props: { nativeType: 'button', resetTime: 1000, ...props },
     renderless
   })
 
   return (
     <button
-      className={([
+      className={[
         'tiny-button',
         type ? 'tiny-button--' + type : '',
         size ? 'tiny-button--' + size : '',
@@ -34,15 +28,16 @@ export default function Button(props) {
         state().plain ? 'is-plain' : '',
         round ? 'is-round' : '',
         circle ? 'is-circle' : ''
-      ]).join(' ').trim()}
+      ]
+        .join(' ')
+        .trim()}
       onClick={handleClick}
       disabled={state().disabled}
       autoFocus={autofocus}
       type={nativeType}
       tabIndex={tabindex}
-      {...$attrs}
-    >
-      {(Icon) ? <Icon className={(text || children) ? 'is-text' : ''} /> : ''}
+      {...$attrs}>
+      {Icon ? <Icon className={text || children ? 'is-text' : ''} /> : ''}
       <span>{children || text}</span>
     </button>
   )

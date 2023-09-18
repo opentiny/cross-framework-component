@@ -16,7 +16,7 @@ export default function Button(props) {
 
   const { handleClick, state, tabindex, type, $attrs } = useSetup({
     // 通过common适配层的useSetup处理props和renderless无渲染层
-    props: { ...props, nativeType: 'button', resetTime: 1000 },
+    props: { nativeType: 'button', resetTime: 1000, ...props },
     renderless
   })
 
