@@ -11,6 +11,6 @@ export default {
   },
   plugins: [vue()],
   define: {
-    'process.env': Object.assign({}, process.env)
+    'process.env': Object.assign({}, {NODE_ENV: process.env.NODE_ENV})
   }
 }
